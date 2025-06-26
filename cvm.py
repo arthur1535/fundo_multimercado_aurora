@@ -92,17 +92,21 @@ print(f"Registros válidos após conversão: {len(df_raptor)}")
 df_raptor['RET_DIARIO'] = df_raptor['VL_QUOTA'].pct_change()
 df_raptor['ACUMULADO'] = (1 + df_raptor['RET_DIARIO']).cumprod() - 1
 
-# ▶️ 7. Simular dados da Selic para comparação (taxa aproximada de 13.75% ao ano)
-# Criar dados simulados de CDI com base na taxa Selic atual
-taxa_selic_anual = 0.1375  # 13.75% ao ano
-taxa_selic_diaria = (1 + taxa_selic_anual) ** (1/252) - 1  # 252 dias úteis por ano
-
-# Criar um DataFrame com as datas do período
-datas_periodo = pd.date_range(data_inicio, data_fim, freq='D')
-df_selic = pd.DataFrame({
-    'Data': datas_periodo,
-    'Fator diário': 1 + taxa_selic_diaria
-})
+# ▶️ 7. Carregar dados da Selic para comparação
+file_path_selic = 'D:/user/taxa_selic_apurada.csv'
+df_selic = pd.read_csv(
+    file_path_selic,
+    sep=';',
+    encoding='utf-8',
+    skiprows=1,
+    parse_dates=['Data'],
+    dayfirst=True,
+    decimal=','
+)
+df_selic = df_selic[['Data', 'Fator diário']]
+# Converter 'Fator diário' para numérico
+df_selic['Fator diário'] = pd.to_numeric(df_selic['Fator diário'], errors='coerce')
+df_selic = df_selic.dropna(subset=['Fator diário'])
 df_selic = df_selic.set_index('Data').sort_index()
 
 # ▶️ 8. Comparar com CDI
