@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # 1. COTAS DOS FUNDOS
-file_path_fundos = 'D:/user/cotas1749772276365.xlsx'
+file_path_fundos = 'data/cotas1749772276365.xlsx'
 df_cotas = pd.read_excel(file_path_fundos, sheet_name='Cotas')
 codigos_fundos = [39589, 53278, 19042, 57400, 33728]
 nomes = ['Vertex', 'Kinea', 'Raptor', 'V8', 'Verde']
@@ -17,7 +17,7 @@ df_fundos_pivot = (
 df_fundos_pivot = df_fundos_pivot.loc['2025-03-01':'2025-06-11'].dropna()
 
 # 2. CDI REAL
-file_path_selic = 'D:/user/taxa_selic_apurada.csv'
+file_path_selic = 'data/taxa_selic_apurada.csv'
 df_selic = pd.read_csv(
     file_path_selic,
     sep=';',

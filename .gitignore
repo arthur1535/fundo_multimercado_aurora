@@ -134,3 +134,10 @@ dmypy.json
 *.xlsx
 *.csv
 *.bat
+
+# Project specific
+# Large Excel files - download from Info Fundos
+data/cotas1749772276365.xlsx
+# Temporary output files
+*.tmp
+*.temp
