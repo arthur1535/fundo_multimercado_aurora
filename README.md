@@ -97,11 +97,6 @@ data_fim = dt.date(2025, 6, 11)
 - Arquivo CSV da Selic: `D:/user/taxa_selic_apurada.csv`
 - Arquivo Excel de cotas: `D:/user/cotas1749772276365.xlsx`
 
-## 🎨 Gráficos Gerados
-
-- `raptor_vs_cdi_real.png` - Comparativo principal
-- `raptor_vs_cdi_final.png` - Versão formatada
-- `raptor_vs_cdi_final.pdf` - Versão para apresentação
 
 ## 📝 Exemplo de Uso
 
