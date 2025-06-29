@@ -133,9 +133,9 @@ Este projeto está sob a licença MIT. Veja o arquivo LICENSE para detalhes.
 
 ## 📞 Contato
 
-- **Autor**: Seu Nome
-- **Email**: seu.email@exemplo.com
-- **LinkedIn**: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
+- **Autor**: Arthur Pires Lopes
+- **Email**: arthurpireslopes1@gmail.com
+- **LinkedIn**: Arthur Pires Lopes
 
 ---
 
